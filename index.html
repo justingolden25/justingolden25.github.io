@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justin Golden | EE @ Georgia Tech</title>
+  <meta name="description" content="Personal ePortfolio of Justin Golden — Electrical Engineering student at Georgia Institute of Technology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-mark">JG</span>
+        <span class="logo-name">Justin Golden</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"     class="nav-link" data-section="home">Home</a></li>
+        <li><a href="#about"    class="nav-link" data-section="about">About</a></li>
+        <li><a href="#goals"    class="nav-link" data-section="goals">Goals</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#resume"   class="nav-link" data-section="resume">Resume</a></li>
+        <li><a href="#contact"  class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO / HOME ===== -->
+  <section id="home" class="section hero-section">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-container">
+      <div class="hero-text" data-reveal>
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Justin Golden</h1>
+        <p class="hero-title">
+          <span class="title-badge">Electrical Engineering</span>
+          <span class="title-sep">·</span>
+          Georgia Institute of Technology
+        </p>
+        <p class="hero-tagline">
+          First-year student (sophomore by credits) driven by a passion for circuits, systems,
+          and the intersection of hardware and software. I thrive at the boundary between
+          theory and real-world application — turning equations on a whiteboard into
+          devices that actually work.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Projects</a>
+          <a href="#contact"  class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-image" data-reveal>
+        <div class="hero-img-frame">
+          <img src="assets/headshot.svg" alt="Justin Golden — profile photo placeholder" class="hero-portrait" />
+          <div class="img-badge badge-gt">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Georgia Tech
+          </div>
+          <div class="img-badge badge-ee">
+            <i class="fa-solid fa-microchip"></i>
+            EE Major
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Quote bar -->
+    <div class="quote-bar" data-reveal>
+      <div class="quote-inner">
+        <i class="fa-solid fa-quote-left quote-icon"></i>
+        <blockquote>
+          "The scientist discovers a new type of material or energy and the engineer discovers a
+          new use for it." — Gordon Lindsay Glegg
+        </blockquote>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ME ===== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">01 / About Me</span>
+        <h2 class="section-title">Background &amp; Interests</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Photo + quick stats -->
+        <div class="about-left" data-reveal>
+          <div class="about-photo-wrap">
+            <img src="assets/headshot.svg" alt="Justin Golden" class="about-photo" />
+          </div>
+          <div class="quick-stats">
+            <div class="stat-card">
+              <i class="fa-solid fa-location-dot stat-icon"></i>
+              <div>
+                <p class="stat-label">University</p>
+                <p class="stat-value">Georgia Tech</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fa-solid fa-microchip stat-icon"></i>
+              <div>
+                <p class="stat-label">Major</p>
+                <p class="stat-value">Electrical Engineering</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fa-solid fa-calendar stat-icon"></i>
+              <div>
+                <p class="stat-label">Class Year</p>
+                <p class="stat-value">First Year (Soph. Credits)</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fa-solid fa-flask stat-icon"></i>
+              <div>
+                <p class="stat-label">Research</p>
+                <p class="stat-value">Columbia University</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bio + interests -->
+        <div class="about-right" data-reveal>
+          <h3 class="about-heading">Who I Am</h3>
+          <p class="about-bio">
+            My name is Justin Golden, and I'm a first-year Electrical Engineering student at the
+            Georgia Institute of Technology — one of the most rigorous and respected engineering
+            programs in the country. Although I'm in my first year on campus, I came in with
+            sophomore-level credits, which has allowed me to dive deeper into the technical
+            curriculum earlier than most of my peers.
+          </p>
+          <p class="about-bio">
+            Growing up, I was always the person taking things apart to see how they worked —
+            whether it was a remote-controlled car, a broken laptop, or an old radio from a
+            garage sale. That curiosity eventually became a direction: electrical engineering sits
+            at the heart of nearly every modern technology, from the smartphones in our pockets
+            to the power grids that light our cities, and I want to be part of shaping the next
+            generation of those systems.
+          </p>
+          <p class="about-bio">
+            Before Georgia Tech, I had the opportunity to conduct research at Columbia University,
+            an experience that gave me an early taste of real scientific inquiry, rigorous methodology,
+            and the collaborative culture of an academic lab. That experience confirmed what I
+            suspected: I'm driven not just by engineering as a profession, but by the pursuit of
+            understanding itself.
+          </p>
+          <p class="about-bio">
+            Outside of academics, I enjoy [placeholder — e.g., hiking, playing guitar, building
+            personal electronics projects, reading science fiction]. I believe a well-rounded
+            engineer is one who can draw creative inspiration from many domains, not just textbooks.
+          </p>
+
+          <h3 class="about-heading" style="margin-top: 2rem;">Areas of Interest</h3>
+          <div class="interest-tags">
+            <span class="tag tag-blue"><i class="fa-solid fa-wave-square"></i> Signal Processing</span>
+            <span class="tag tag-gold"><i class="fa-solid fa-microchip"></i> Embedded Systems</span>
+            <span class="tag tag-blue"><i class="fa-solid fa-bolt"></i> Power Electronics</span>
+            <span class="tag tag-gold"><i class="fa-solid fa-code"></i> MATLAB / Python</span>
+            <span class="tag tag-blue"><i class="fa-solid fa-circle-nodes"></i> Circuit Design</span>
+            <span class="tag tag-gold"><i class="fa-solid fa-robot"></i> Control Systems</span>
+            <span class="tag tag-blue"><i class="fa-brands fa-raspberry-pi"></i> Microcontrollers</span>
+            <span class="tag tag-gold"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAREER GOALS ===== -->
+  <section id="goals" class="section goals-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">02 / Career Goals</span>
+        <h2 class="section-title">Where I'm Headed</h2>
+      </div>
+
+      <div class="goals-intro" data-reveal>
+        <p>
+          My long-term aspiration is to become a leading engineer in the field of
+          [placeholder — e.g., biomedical devices / power systems / semiconductor design],
+          contributing technical innovation at the intersection of cutting-edge research and
+          practical engineering. I want to solve problems that matter — building systems
+          that improve quality of life, advance scientific understanding, or reshape an industry.
+          The path there is clear, intentional, and driven by a commitment to continuous growth
+          at every stage.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline" data-reveal>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div class="timeline-card">
+            <span class="timeline-year">2025 – 2026</span>
+            <h3 class="timeline-title">Build the Foundation</h3>
+            <p class="timeline-desc">
+              Master core EE fundamentals including circuit analysis, digital logic, linear
+              algebra, and differential equations. Maintain a strong GPA, engage with professors,
+              and join at least one student organization — such as the IEEE Student Branch or
+              a design team like Robojackets — to apply classroom knowledge in a team environment.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div class="timeline-card">
+            <span class="timeline-year">Summer 2026</span>
+            <h3 class="timeline-title">First Engineering Internship</h3>
+            <p class="timeline-desc">
+              Secure a summer internship at a technology or engineering company where I can
+              apply my EE fundamentals to real hardware or firmware challenges. Target companies
+              range from semiconductor firms and defense contractors to consumer electronics
+              startups. The goal is to validate my skills in an industry setting and learn how
+              engineering decisions are made at scale.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <div class="timeline-card">
+            <span class="timeline-year">2026 – 2028</span>
+            <h3 class="timeline-title">Advanced Coursework &amp; Research</h3>
+            <p class="timeline-desc">
+              Pursue upper-division EE courses in [placeholder — e.g., electromagnetics,
+              VLSI design, communications], and join a Georgia Tech research lab. Explore
+              the possibility of an honors thesis or independent study project. Use this
+              period to narrow down the subfield I want to specialize in, whether that's
+              hardware design, signal processing, or applied machine learning for physical systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-card">
+            <span class="timeline-year">2028 – 2029</span>
+            <h3 class="timeline-title">Bachelor's Degree &amp; Next Step</h3>
+            <p class="timeline-desc">
+              Complete my B.S. in Electrical Engineering and decide between entering industry
+              in a full-time engineering role or pursuing a Master's or Ph.D. program to deepen
+              specialization. This decision will be shaped by the research and internship
+              experiences of the preceding years. Either path leads toward technical leadership
+              and meaningful impact.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="timeline-card">
+            <span class="timeline-year">Long-Term</span>
+            <h3 class="timeline-title">Lead &amp; Innovate</h3>
+            <p class="timeline-desc">
+              Become a technical leader — whether as a principal engineer, researcher, or
+              entrepreneur — who drives innovation in a field that matters. My ambition is
+              not just to execute great engineering, but to mentor the next generation of
+              engineers and contribute to a body of work that reflects both technical
+              excellence and human purpose.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">03 / Projects</span>
+        <h2 class="section-title">Work &amp; Research</h2>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs" data-reveal>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="coursework">GT Coursework</button>
+        <button class="filter-btn" data-filter="personal">Personal</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+      </div>
+
+      <!-- Project grid -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Project 1: GT Coursework -->
+        <article class="project-card" data-category="coursework" data-reveal>
+          <div class="card-img-wrap">
+            <img src="assets/project-circuit.svg" alt="Analog Circuit Design project" class="card-img" />
+            <span class="card-category cat-coursework">GT Coursework</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Analog Circuit Design — Op-Amp Filter</h3>
+            <p class="card-desc">
+              Designed and simulated a multi-stage active bandpass filter using operational
+              amplifiers as part of ECE 2040 (Circuit Analysis). The filter was specified to
+              pass a 1–5 kHz band for audio processing applications with less than 3 dB of
+              passband ripple. Work included hand analysis, LTspice simulation, and a physical
+              breadboard build verified on an oscilloscope.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">LTspice</span>
+              <span class="tech-tag">Op-Amps</span>
+              <span class="tech-tag">Filter Design</span>
+              <span class="tech-tag">ECE 2040</span>
+            </div>
+            <div class="card-links">
+              <a href="#" class="card-link"><i class="fa-brands fa-github"></i> Code / Report</a>
+              <a href="#" class="card-link card-link-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: GT Coursework -->
+        <article class="project-card" data-category="coursework" data-reveal>
+          <div class="card-img-wrap">
+            <img src="assets/project-embedded.svg" alt="Embedded Systems project" class="card-img" />
+            <span class="card-category cat-coursework">GT Coursework</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Embedded Systems — STM32 Sensor Node</h3>
+            <p class="card-desc">
+              Programmed an STM32F4 microcontroller in C to read temperature and humidity
+              data from a DHT22 sensor, display live readings on an I²C OLED screen, and
+              transmit data over UART to a PC terminal. The project introduced key embedded
+              concepts including GPIO configuration, interrupt-driven I/O, and low-power
+              sleep modes. Board design was completed in KiCad.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">STM32</span>
+              <span class="tech-tag">C</span>
+              <span class="tech-tag">I²C / UART</span>
+              <span class="tech-tag">KiCad</span>
+            </div>
+            <div class="card-links">
+              <a href="#" class="card-link"><i class="fa-brands fa-github"></i> Repository</a>
+              <a href="#" class="card-link card-link-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Personal -->
+        <article class="project-card" data-category="personal" data-reveal>
+          <div class="card-img-wrap">
+            <img src="assets/project-code.svg" alt="Signal Processing personal project" class="card-img" />
+            <span class="card-category cat-personal">Personal</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">DSP Toolkit — Python Signal Library</h3>
+            <p class="card-desc">
+              Built a personal Python library for digital signal processing experiments,
+              featuring Butterworth, Chebyshev, and FIR filter implementations alongside
+              FFT analysis and spectrogram visualization tools. The project grew out of a
+              desire to understand DSP concepts at the implementation level, not just through
+              pre-built library calls. Documentation and unit tests are included, and the
+              project is open-sourced on GitHub.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">SciPy</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/justingolden25" class="card-link" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="card-link card-link-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Research -->
+        <article class="project-card" data-category="research" data-reveal>
+          <div class="card-img-wrap">
+            <img src="assets/project-research.svg" alt="Columbia University research project" class="card-img" />
+            <span class="card-category cat-research">Research</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Columbia University — [Research Project Title]</h3>
+            <p class="card-desc">
+              Conducted undergraduate research at Columbia University in the
+              [Lab Name] lab under Professor [Advisor Name]. The project involved
+              [placeholder: e.g., analyzing EEG signal data using custom bandpass filters
+              to identify neural oscillation patterns associated with cognitive load].
+              Responsibilities included literature review, experimental data collection,
+              MATLAB analysis scripting, and presenting findings to the research group.
+              Results contributed to [placeholder outcome or publication].
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">Signal Analysis</span>
+              <span class="tech-tag">Research Methods</span>
+              <span class="tech-tag">[Placeholder Tool]</span>
+            </div>
+            <div class="card-links">
+              <a href="#" class="card-link"><i class="fa-solid fa-file-lines"></i> Paper / Report</a>
+              <a href="#" class="card-link card-link-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Personal -->
+        <article class="project-card" data-category="personal" data-reveal>
+          <div class="card-img-wrap">
+            <div class="card-img-placeholder placeholder-web">
+              <i class="fa-solid fa-globe placeholder-icon"></i>
+              <span>Web Project</span>
+            </div>
+            <span class="card-category cat-personal">Personal</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">[Personal Project — Placeholder]</h3>
+            <p class="card-desc">
+              Description of a personal project goes here. This could be a website,
+              mobile app, hardware build, or any creative technical endeavor. Replace this
+              placeholder with details about what you built, the problem it solves or
+              the skills it demonstrates, the tech stack you used, and any notable outcomes
+              or learnings. Links to a live demo or GitHub repository can be updated in the
+              card links below.
+            </p>
+            <div class="card-tags">
+              <span class="tech-tag">[Tech 1]</span>
+              <span class="tech-tag">[Tech 2]</span>
+              <span class="tech-tag">[Tech 3]</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/justingolden25" class="card-link" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="card-link card-link-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ===== RESUME ===== -->
+  <section id="resume" class="section resume-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">04 / Resume</span>
+        <h2 class="section-title">Curriculum Vitae</h2>
+      </div>
+
+      <div class="resume-intro" data-reveal>
+        <p>
+          A snapshot of my academic background, technical skills, and experience.
+          Download the full PDF version or browse the summary below.
+        </p>
+        <div class="resume-actions">
+          <a href="assets/justin-golden-resume.pdf" download class="btn btn-primary">
+            <i class="fa-solid fa-download"></i> Download PDF
+          </a>
+          <span class="resume-updated">Last updated: Spring 2026</span>
+        </div>
+      </div>
+
+      <!-- Resume preview card -->
+      <div class="resume-card" data-reveal>
+        <div class="resume-doc">
+
+          <!-- Resume header -->
+          <div class="rdoc-header">
+            <h2 class="rdoc-name">Justin Golden</h2>
+            <p class="rdoc-contact-line">
+              Atlanta, GA &nbsp;·&nbsp;
+              <a href="mailto:jgolden@gatech.edu">jgolden@gatech.edu</a> &nbsp;·&nbsp;
+              <a href="tel:+10000000000">(000) 000-0000</a> &nbsp;·&nbsp;
+              <a href="https://linkedin.com/in/justingolden25" target="_blank" rel="noopener">linkedin.com/in/justingolden25</a> &nbsp;·&nbsp;
+              <a href="https://github.com/justingolden25" target="_blank" rel="noopener">github.com/justingolden25</a>
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div class="rdoc-section">
+            <h3 class="rdoc-section-title">Education</h3>
+            <div class="rdoc-entry">
+              <div class="rdoc-entry-header">
+                <strong>Georgia Institute of Technology</strong>
+                <span>Atlanta, GA</span>
+              </div>
+              <div class="rdoc-entry-sub">
+                <em>Bachelor of Science, Electrical Engineering</em>
+                <span>Expected May 2028</span>
+              </div>
+              <ul class="rdoc-list">
+                <li>GPA: [X.XX / 4.00]</li>
+                <li>Relevant Coursework: Circuit Analysis (ECE 2040), Digital System Design (ECE 2020),
+                    Linear Algebra, Differential Equations, Introduction to Signal Processing</li>
+                <li>Activities: [IEEE Student Branch, Robojackets, Honor Program — replace with actual]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="rdoc-section">
+            <h3 class="rdoc-section-title">Experience</h3>
+            <div class="rdoc-entry">
+              <div class="rdoc-entry-header">
+                <strong>Columbia University — [Lab Name]</strong>
+                <span>New York, NY</span>
+              </div>
+              <div class="rdoc-entry-sub">
+                <em>Undergraduate Research Assistant</em>
+                <span>[Start] – [End]</span>
+              </div>
+              <ul class="rdoc-list">
+                <li>Conducted research on [topic] under the supervision of Prof. [Name]</li>
+                <li>Developed MATLAB scripts to analyze and visualize [data type], reducing manual processing time by [X]%</li>
+                <li>Presented weekly progress updates to the research team; contributed to [paper/report/poster]</li>
+              </ul>
+            </div>
+            <div class="rdoc-entry">
+              <div class="rdoc-entry-header">
+                <strong>[Company / Organization — Placeholder]</strong>
+                <span>[Location]</span>
+              </div>
+              <div class="rdoc-entry-sub">
+                <em>[Role Title]</em>
+                <span>[Date Range]</span>
+              </div>
+              <ul class="rdoc-list">
+                <li>[Accomplishment or responsibility with quantified result]</li>
+                <li>[Accomplishment or responsibility with quantified result]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Projects (condensed) -->
+          <div class="rdoc-section">
+            <h3 class="rdoc-section-title">Selected Projects</h3>
+            <div class="rdoc-entry">
+              <div class="rdoc-entry-header">
+                <strong>Analog Bandpass Filter Design</strong>
+                <span>LTspice · Breadboard · ECE 2040</span>
+              </div>
+              <ul class="rdoc-list">
+                <li>Designed multi-stage active filter with op-amps; verified performance on oscilloscope</li>
+              </ul>
+            </div>
+            <div class="rdoc-entry">
+              <div class="rdoc-entry-header">
+                <strong>STM32 Embedded Sensor Node</strong>
+                <span>C · STM32 · KiCad</span>
+              </div>
+              <ul class="rdoc-list">
+                <li>Built and programmed microcontroller-based sensor node with I²C OLED display and UART logging</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="rdoc-section">
+            <h3 class="rdoc-section-title">Technical Skills</h3>
+            <div class="rdoc-skills-grid">
+              <div class="rdoc-skill-group">
+                <strong>Languages:</strong>
+                <span>C · Python · MATLAB · [Verilog / VHDL] · JavaScript</span>
+              </div>
+              <div class="rdoc-skill-group">
+                <strong>Tools &amp; Software:</strong>
+                <span>LTspice · KiCad · MATLAB/Simulink · Git · VS Code · [Multisim]</span>
+              </div>
+              <div class="rdoc-skill-group">
+                <strong>Hardware:</strong>
+                <span>Oscilloscopes · Function Generators · Multimeters · STM32 · Arduino · Raspberry Pi</span>
+              </div>
+              <div class="rdoc-skill-group">
+                <strong>Concepts:</strong>
+                <span>Circuit Analysis · Digital Logic · Filter Design · Signal Processing · Embedded Programming</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /resume-doc -->
+      </div><!-- /resume-card -->
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">05 / Contact</span>
+        <h2 class="section-title">Let's Connect</h2>
+      </div>
+
+      <p class="contact-intro" data-reveal>
+        Whether you're a recruiter with an exciting opportunity, a professor interested in
+        collaborative research, or a fellow student looking to work on a project together —
+        I'd love to hear from you. The best way to reach me is via email or LinkedIn.
+      </p>
+
+      <div class="contact-grid" data-reveal>
+
+        <a href="mailto:jgolden@gatech.edu" class="contact-card">
+          <div class="contact-icon-wrap email-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="contact-info">
+            <p class="contact-type">Email</p>
+            <p class="contact-value">jgolden@gatech.edu</p>
+            <p class="contact-note">Replace with your actual GT email</p>
+          </div>
+          <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+
+        <a href="tel:+10000000000" class="contact-card">
+          <div class="contact-icon-wrap phone-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="contact-info">
+            <p class="contact-type">Phone</p>
+            <p class="contact-value">(000) 000-0000</p>
+            <p class="contact-note">Replace with your phone number</p>
+          </div>
+          <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/justingolden25" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon-wrap linkedin-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <div class="contact-info">
+            <p class="contact-type">LinkedIn</p>
+            <p class="contact-value">justingolden25</p>
+            <p class="contact-note">linkedin.com/in/justingolden25</p>
+          </div>
+          <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+
+        <a href="https://github.com/justingolden25" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon-wrap github-icon">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="contact-info">
+            <p class="contact-type">GitHub</p>
+            <p class="contact-value">justingolden25</p>
+            <p class="contact-note">github.com/justingolden25</p>
+          </div>
+          <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+
+      </div><!-- /contact-grid -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Justin Golden &nbsp;·&nbsp; Georgia Tech EE</p>
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#goals">Goals</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <rect width="600" height="300" fill="#0f1923"/>
+  <!-- Microcontroller board -->
+  <rect x="160" y="60" width="280" height="180" rx="8" fill="#1a3a1a" stroke="#2a6a2a" stroke-width="2"/>
+  <!-- Board holes (corners) -->
+  <circle cx="175" cy="75" r="6" fill="#0f1923"/>
+  <circle cx="425" cy="75" r="6" fill="#0f1923"/>
+  <circle cx="175" cy="225" r="6" fill="#0f1923"/>
+  <circle cx="425" cy="225" r="6" fill="#0f1923"/>
+  <!-- MCU chip -->
+  <rect x="230" y="110" width="140" height="80" rx="4" fill="#2a2a4a" stroke="#4a4a8a" stroke-width="1.5"/>
+  <text x="300" y="148" text-anchor="middle" font-family="monospace" font-size="11" fill="#79c0ff">STM32F4</text>
+  <text x="300" y="164" text-anchor="middle" font-family="monospace" font-size="9" fill="#8b949e">ARM Cortex-M4</text>
+  <!-- MCU pins top -->
+  <g fill="#B3A369">
+    <rect x="250" y="103" width="8" height="9" rx="1"/>
+    <rect x="265" y="103" width="8" height="9" rx="1"/>
+    <rect x="280" y="103" width="8" height="9" rx="1"/>
+    <rect x="295" y="103" width="8" height="9" rx="1"/>
+    <rect x="310" y="103" width="8" height="9" rx="1"/>
+    <rect x="325" y="103" width="8" height="9" rx="1"/>
+    <rect x="340" y="103" width="8" height="9" rx="1"/>
+  </g>
+  <!-- MCU pins bottom -->
+  <g fill="#B3A369">
+    <rect x="250" y="188" width="8" height="9" rx="1"/>
+    <rect x="265" y="188" width="8" height="9" rx="1"/>
+    <rect x="280" y="188" width="8" height="9" rx="1"/>
+    <rect x="295" y="188" width="8" height="9" rx="1"/>
+    <rect x="310" y="188" width="8" height="9" rx="1"/>
+    <rect x="325" y="188" width="8" height="9" rx="1"/>
+    <rect x="340" y="188" width="8" height="9" rx="1"/>
+  </g>
+  <!-- Header pins left side -->
+  <g fill="#c0c0c0">
+    <rect x="168" y="90" width="6" height="120" rx="2" fill="#1a4a1a"/>
+    <rect x="168" y="95" width="10" height="5" rx="1"/>
+    <rect x="168" y="105" width="10" height="5" rx="1"/>
+    <rect x="168" y="115" width="10" height="5" rx="1"/>
+    <rect x="168" y="125" width="10" height="5" rx="1"/>
+    <rect x="168" y="135" width="10" height="5" rx="1"/>
+    <rect x="168" y="145" width="10" height="5" rx="1"/>
+    <rect x="168" y="155" width="10" height="5" rx="1"/>
+    <rect x="168" y="165" width="10" height="5" rx="1"/>
+  </g>
+  <!-- USB connector -->
+  <rect x="422" y="130" width="20" height="40" rx="3" fill="#3a3a3a" stroke="#666" stroke-width="1"/>
+  <rect x="427" y="140" width="10" height="20" rx="1" fill="#1a1a1a"/>
+  <!-- LED indicators -->
+  <circle cx="200" cy="90" r="6" fill="#00ff00" opacity="0.8"/>
+  <circle cx="218" cy="90" r="6" fill="#ff4400" opacity="0.6"/>
+  <text x="200" y="225" text-anchor="middle" font-family="monospace" font-size="8" fill="#2a6a2a">PWR</text>
+  <text x="218" y="225" text-anchor="middle" font-family="monospace" font-size="8" fill="#2a6a2a">TX</text>
+  <!-- Glow effect on LEDs -->
+  <circle cx="200" cy="90" r="10" fill="none" stroke="#00ff00" stroke-width="1" opacity="0.3"/>
+  <!-- Label -->
+  <text x="300" y="280" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="rgba(179,163,105,0.9)" font-weight="500">Embedded Systems — STM32 Microcontroller</text>
+</svg>

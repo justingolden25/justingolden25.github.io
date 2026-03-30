@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#003057;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a4a7a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B3A369;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B7D3A;stop-opacity:1" />
+    </linearGradient>
+    <clipPath id="circleClip">
+      <circle cx="200" cy="200" r="196"/>
+    </clipPath>
+  </defs>
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)"/>
+  <!-- Subtle grid pattern -->
+  <g clip-path="url(#circleClip)" opacity="0.08">
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#B3A369" stroke-width="1"/>
+    <line x1="0" y1="160" x2="400" y2="160" stroke="#B3A369" stroke-width="1"/>
+    <line x1="0" y1="240" x2="400" y2="240" stroke="#B3A369" stroke-width="1"/>
+    <line x1="0" y1="320" x2="400" y2="320" stroke="#B3A369" stroke-width="1"/>
+    <line x1="80" y1="0" x2="80" y2="400" stroke="#B3A369" stroke-width="1"/>
+    <line x1="160" y1="0" x2="160" y2="400" stroke="#B3A369" stroke-width="1"/>
+    <line x1="240" y1="0" x2="240" y2="400" stroke="#B3A369" stroke-width="1"/>
+    <line x1="320" y1="0" x2="320" y2="400" stroke="#B3A369" stroke-width="1"/>
+  </g>
+  <!-- Body / shirt -->
+  <ellipse cx="200" cy="370" rx="120" ry="80" fill="url(#shirtGrad)"/>
+  <!-- Neck -->
+  <rect x="178" y="270" width="44" height="50" rx="10" fill="#e8c49a"/>
+  <!-- Head -->
+  <ellipse cx="200" cy="220" rx="72" ry="82" fill="#e8c49a"/>
+  <!-- Hair -->
+  <ellipse cx="200" cy="152" rx="72" ry="40" fill="#3a2a1a"/>
+  <rect x="128" y="152" width="144" height="30" fill="#3a2a1a"/>
+  <!-- Ears -->
+  <ellipse cx="128" cy="220" rx="12" ry="18" fill="#e0b88a"/>
+  <ellipse cx="272" cy="220" rx="12" ry="18" fill="#e0b88a"/>
+  <!-- Eyes -->
+  <ellipse cx="176" cy="210" rx="12" ry="10" fill="white"/>
+  <ellipse cx="224" cy="210" rx="12" ry="10" fill="white"/>
+  <circle cx="178" cy="212" r="7" fill="#3a2a1a"/>
+  <circle cx="226" cy="212" r="7" fill="#3a2a1a"/>
+  <circle cx="180" cy="210" r="2.5" fill="white"/>
+  <circle cx="228" cy="210" r="2.5" fill="white"/>
+  <!-- Eyebrows -->
+  <path d="M163 198 Q176 192 190 197" stroke="#3a2a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M210 197 Q224 192 237 198" stroke="#3a2a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Nose -->
+  <path d="M200 220 Q194 234 197 240 Q200 243 203 240 Q206 234 200 220" fill="#d4a070"/>
+  <!-- Smile -->
+  <path d="M182 258 Q200 272 218 258" stroke="#c0785a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Gold ring border -->
+  <circle cx="200" cy="200" r="196" fill="none" stroke="#B3A369" stroke-width="4"/>
+  <!-- Photo placeholder text -->
+  <text x="200" y="352" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="rgba(255,255,255,0.6)" font-weight="500">[ Replace with your photo ]</text>
+</svg>
