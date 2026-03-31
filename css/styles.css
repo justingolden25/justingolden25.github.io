@@ -326,9 +326,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .hero-img-frame {
   position: relative;
   width: 340px;
+  height: 340px;
 }
 .hero-portrait {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
   box-shadow: var(--shadow-lg);
   border: 5px solid white;
@@ -428,7 +431,7 @@ blockquote {
 }
 .stat-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: .85rem;
   background: var(--bg-alt);
   border: 1px solid var(--border);
@@ -455,6 +458,16 @@ blockquote {
   font-weight: 600;
   color: var(--gt-navy);
   line-height: 1.3;
+}
+.stat-interests {
+  font-weight: 400;
+  font-size: .8rem;
+  margin-top: .2rem;
+}
+.interest-cat {
+  font-weight: 700;
+  color: var(--gt-gold-dark);
+  margin-right: .3rem;
 }
 
 .about-heading {
@@ -701,6 +714,11 @@ blockquote {
   color: white;
   backdrop-filter: blur(4px);
 }
+.cat-work {
+  background: rgba(34,113,62,.85);
+  color: white;
+  backdrop-filter: blur(4px);
+}
 .card-body {
   padding: 1.5rem;
   display: flex;
@@ -872,6 +890,14 @@ blockquote {
   color: var(--text-mid);
   line-height: 1.7;
 }
+.rdoc-objective {
+  font-size: .88rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+.rdoc-entry-sub em:empty {
+  display: none;
+}
 .rdoc-skills-grid {
   display: grid;
   gap: .5rem;
@@ -1015,7 +1041,7 @@ blockquote {
     gap: 2.5rem;
   }
   .hero-image { order: -1; }
-  .hero-img-frame { width: 220px; }
+  .hero-img-frame { width: 220px; height: 220px; }
   .hero-tagline { margin: 0 auto 2rem; }
   .hero-cta { justify-content: center; }
   .hero-title { justify-content: center; }
