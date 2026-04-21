@@ -37,7 +37,7 @@ Each project gets its own page under `pages/`. Current pages: `pages/led-ceiling
 
 `css/project.css` adds all subpage-specific styles on top of `styles.css` (both are linked). Key layout classes:
 - `.proj-hero` — dark navy gradient hero with `.proj-meta-badges`
-- `.tech-sub` — two-column grid (content + image placeholder). Add `.reverse` to flip order via `direction: rtl` — this visually swaps columns without changing HTML source order. Sections must strictly alternate: A (no reverse), B (`.reverse`), C (no reverse), D (`.reverse`), etc.
+- `.tech-sub` — two-column grid (content + image). Add `.reverse` to flip order via `direction: rtl` — this visually swaps columns without changing HTML source order. Sections must strictly alternate: A (no reverse), B (`.reverse`), C (no reverse), D (`.reverse`), etc.
 - `.tech-sub.full-width` — single-column, used for BOM/wide content
 - `.gallery-grid` — 3-col responsive grid; `.gallery-item[data-src]` items trigger the lightbox
 - `.img-placeholder` / `.bom-placeholder` — styled dashed-border placeholders for missing media
@@ -50,7 +50,7 @@ Subpages live one level deep (`pages/`), so all asset paths use `../` prefixes:
 - Stylesheets: `../css/styles.css` and `../css/project.css`
 - Scripts: `../js/project.js`
 - Nav links: `../index.html#section`
-- Assets: `../assets/filename`
+- Assets: `../assets/filename` or `../assets/led-ceiling-pics/filename`
 
 The main site's project card "Details" links point to `pages/led-ceiling.html` (no `../` needed from root).
 
@@ -69,3 +69,11 @@ The main site's project card "Details" links point to `pages/led-ceiling.html` (
 **Resume preview** — Inline HTML resume uses `.rdoc-*` classes. `.rdoc-entry-header` and `.rdoc-entry-sub` are flex rows that collapse to column on mobile. Download button links to `assets/resume.pdf`.
 
 **Replacing gallery placeholders with real images** — Swap `.gallery-placeholder` div for `.gallery-item` div with `data-src="../assets/photo.jpg"` `data-alt="..."`, and put an `<img class="gallery-img">` inside. The lightbox activates automatically.
+
+**Replacing tech-sub image placeholders with real images** — Swap the `.img-placeholder` div for `<img class="tech-sub-img" src="../assets/..." alt="..." />`. The `.tech-sub-img` class sets `width: 100%; object-fit: contain; border-radius: var(--radius)`.
+
+**Rotating a tech-sub image 90°** — Wrap the `<img>` in `<div class="tech-sub-img-rotated-wrap">`. The wrapper uses `display: flex; overflow: hidden; clip-path: inset(0 round 12px)` to contain the rotated layout bleed and apply rounded corners. The image inside uses `transform: rotate(90deg); height: 100%; max-width: none; flex-shrink: 0`. Fine-tune vertical position with `margin-top` on the wrapper (negative values move it up).
+
+**Vertically stretching a tech-sub image to match text height** — Add class `tech-sub-img-vstretch` to the `<img>`. This sets `align-self: stretch; height: 100%; object-fit: fill`, making the image grow to the grid row height (driven by the text column) and fill it without maintaining aspect ratio.
+
+**Cropping a tech-sub image edge** — Use an inline `style="clip-path: inset(0 0 0 X%)"` on the `<img>` to trim a percentage off the left (or adjust the four values for top/right/bottom/left). Non-destructive — the original file is unchanged.

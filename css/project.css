@@ -229,6 +229,34 @@
 }
 
 /* Image / BOM placeholders */
+.tech-sub-img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  object-fit: contain;
+}
+.tech-sub-img-vstretch {
+  align-self: stretch;
+  height: 100%;
+  object-fit: fill;
+}
+.tech-sub-img-rotated-wrap {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: inset(0 round 12px);
+  margin-top: -20px;
+}
+.tech-sub-img-rotated-wrap .tech-sub-img {
+  flex-shrink: 0;
+  width: auto;
+  max-height: 420px;
+  max-width: none;
+  transform: rotate(90deg);
+  border-radius: 0;
+}
 .img-placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
