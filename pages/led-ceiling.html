@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom LED Ceiling — Justin Golden</title>
+  <meta name="description" content="Deep-dive case study: Custom addressable LED matrix engineered and installed in the Delta Chi chapter room at Georgia Tech by Justin Golden." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-mark">JG</span>
+        <span class="logo-name">Justin Golden</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#home"     class="nav-link">Home</a></li>
+        <li><a href="../index.html#about"    class="nav-link">About</a></li>
+        <li><a href="../index.html#goals"    class="nav-link">Goals</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../index.html#resume"   class="nav-link">Resume</a></li>
+        <li><a href="../index.html#contact"  class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== BACK BAR ===== -->
+  <div class="back-bar">
+    <div class="container">
+      <a href="../index.html#projects" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Projects
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== PROJECT HERO ===== -->
+  <section class="proj-hero">
+    <div class="container proj-hero-inner">
+      <div data-reveal>
+        <span class="proj-hero-label">
+          <i class="fa-solid fa-lightbulb"></i>&nbsp; Personal Project
+        </span>
+        <h1 class="proj-hero-title">
+          Custom LED Ceiling —<br><span>Delta Chi Chapter Room</span>
+        </h1>
+        <p class="proj-hero-tagline">
+          A fully custom addressable LED matrix designed and engineered from scratch —
+          24V DC power distribution, ESP32 + WLED control, level-shifted signal routing,
+          and a clean professional installation above a T-bar drop ceiling.
+        </p>
+        <div class="proj-meta-badges">
+          <span class="proj-meta-badge">
+            <i class="fa-solid fa-calendar"></i> August 2025 — April 2026
+          </span>
+          <span class="proj-meta-badge">
+            <i class="fa-solid fa-microchip"></i> Electrical Engineer &amp; Designer
+          </span>
+          <span class="proj-meta-badge">
+            <i class="fa-solid fa-location-dot"></i> Georgia Tech, Atlanta GA
+          </span>
+        </div>
+      </div>
+      <div class="proj-hero-img-placeholder" data-reveal>
+        <i class="fa-solid fa-image"></i>
+        <span class="ph-label">Hero photo — finished ceiling with lights on</span>
+        <span class="ph-sub">Replace with: assets/led-ceiling-hero.jpg</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECT OVERVIEW ===== -->
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-section-header" data-reveal>
+        <span class="section-label">01 / Overview</span>
+        <h2 class="section-title">Project Overview</h2>
+      </div>
+      <div class="proj-overview-body" data-reveal>
+        <p>
+          The Custom LED Ceiling is a fully self-directed electrical engineering build:
+          designing and installing a custom addressable LED lighting system in the Delta Chi
+          chapter room at Georgia Tech. Six lanes of addressable LED strips — three on each
+          side of the ceiling — total approximately 1,000 individually addressable pixels,
+          with all power and control electronics mounted above the T-bar drop ceiling tiles
+          and completely out of view.
+        </p>
+        <p>
+          The core engineering challenge was running a low-voltage addressable LED system
+          above a drop ceiling cleanly and reliably — managing voltage drop over long cable
+          runs to six parallel lanes, maintaining signal integrity across every lane
+          simultaneously, providing independent overcurrent protection per lane, and keeping
+          every wire and component invisible from the room below. The goal was a system that
+          works reliably and looks like it belongs there.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNICAL DEEP DIVE ===== -->
+  <section class="proj-section proj-section-alt">
+    <div class="container">
+      <div class="proj-section-header" data-reveal>
+        <span class="section-label">02 / Technical Deep Dive</span>
+        <h2 class="section-title">Engineering Details</h2>
+      </div>
+
+      <div class="tech-subsections">
+
+        <!-- a) System Architecture -->
+        <div class="tech-sub" data-reveal>
+          <div class="tech-sub-content">
+            <p class="tech-sub-number">Section A</p>
+            <h3 class="tech-sub-title">System Architecture</h3>
+            <ul class="tech-sub-list">
+              <li>6 lanes of WS2812B-compatible addressable LED strips — 3 per side of the ceiling</li>
+              <li>24V DC power supply feeds a centralized fuse block with one fuse per lane for independent fault protection</li>
+              <li>24V architecture reduces current draw and I²R losses over long cable runs compared to 5V or 12V systems</li>
+              <li>Buck converter (24V → 5V) powers the ESP32 and level-shifter logic from the same main supply</li>
+              <li>Structured grounding throughout — all grounds bonded at a single point to prevent ground loops</li>
+            </ul>
+          </div>
+          <div class="img-placeholder">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span class="ph-label">System architecture diagram</span>
+            <span class="ph-sub">Block diagram: PSU → fuse block → buck + ESP32 → level shifter → 6× lanes</span>
+          </div>
+        </div>
+
+        <!-- b) Perfboard Control Circuit -->
+        <div class="tech-sub reverse" data-reveal>
+          <div class="tech-sub-content">
+            <p class="tech-sub-number">Section B</p>
+            <h3 class="tech-sub-title">Perfboard Control Circuit</h3>
+            <ul class="tech-sub-list">
+              <li>Custom perfboard consolidates the ESP32 and level shifter on a single board with a shared 5V power and ground bus bar</li>
+              <li>IC sockets for both ICs allow either component to be swapped without desoldering — designed for easy field troubleshooting</li>
+              <li>ESP32 outputs 3.3V WLED data; the level shifter steps this up to 5V for LED strip compatibility</li>
+              <li>6 level-shifter outputs — one per lane — each with a dedicated 330Ω series resistor soldered to the board to damp signal reflections at the strip inputs</li>
+              <li>Each output connects via an individual data wire running to its corresponding LED lane</li>
+            </ul>
+          </div>
+          <div class="img-placeholder">
+            <i class="fa-solid fa-share-nodes"></i>
+            <span class="ph-label">Perfboard control circuit</span>
+            <span class="ph-sub">Photo: completed perfboard with ESP32, level shifter, bus bar, and 330Ω output resistors</span>
+          </div>
+        </div>
+
+        <!-- c) Control System -->
+        <div class="tech-sub" data-reveal>
+          <div class="tech-sub-content">
+            <p class="tech-sub-number">Section C</p>
+            <h3 class="tech-sub-title">Control System</h3>
+            <ul class="tech-sub-list">
+              <li>ESP32 microcontroller running WLED open-source firmware</li>
+              <li>Fully Wi-Fi controlled via the WLED web app from any phone or laptop on the local network</li>
+              <li>~1,000 individually addressable pixels driven as a single continuous segment across all six lanes</li>
+              <li>Supports a wide range of effects: color waves, strobes, chases, solid fills, color palettes, and custom presets</li>
+              <li>All control hardware mounted above the ceiling — no visible equipment in the room</li>
+            </ul>
+          </div>
+          <div class="img-placeholder">
+            <i class="fa-solid fa-wifi"></i>
+            <span class="ph-label">ESP32 and control electronics</span>
+            <span class="ph-sub">Photo: ESP32 board, wiring to level shifter, mounted above ceiling</span>
+          </div>
+        </div>
+
+        <!-- d) Diffusion & Mounting -->
+        <div class="tech-sub reverse" data-reveal>
+          <div class="tech-sub-content">
+            <p class="tech-sub-number">Section D</p>
+            <h3 class="tech-sub-title">Diffusion &amp; Mounting</h3>
+            <ul class="tech-sub-list">
+              <li>Silicone LED diffuser channels zip-tied directly to the T-bar drop ceiling rails — no drilling, no permanent modification to the space</li>
+              <li>Clear zip ties used throughout for a clean, minimal look</li>
+              <li>All wiring routed above the ceiling tiles — no exposed cables visible from the room below</li>
+              <li>Diffusers soften individual LED hotspots into a smooth, even glow along the full length of each lane</li>
+            </ul>
+          </div>
+          <div class="img-placeholder">
+            <i class="fa-solid fa-layer-group"></i>
+            <span class="ph-label">Ceiling installation in progress</span>
+            <span class="ph-sub">Photo: diffusers on T-bar, wiring routed above tiles</span>
+          </div>
+        </div>
+
+        <!-- e) Bill of Materials -->
+        <div class="tech-sub full-width" data-reveal>
+          <div class="tech-sub-content">
+            <p class="tech-sub-number">Section E</p>
+            <h3 class="tech-sub-title">Bill of Materials</h3>
+            <p class="tech-sub-desc">
+              All components were individually selected for this application — matching
+              ratings, form factor, and cost targets. The full BOM documents every part,
+              quantity, unit price, and total cost.
+            </p>
+          </div>
+          <div class="bom-placeholder">
+            <i class="fa-solid fa-file-excel"></i>
+            <span class="ph-label">BOM spreadsheet — full component list with pricing</span>
+            <span class="ph-sub">
+              Embed or link BOM Excel file here.<br>
+              Columns: Component · Part # · Supplier · Qty · Unit Price · Total
+            </span>
+          </div>
+        </div>
+
+      </div><!-- /tech-subsections -->
+    </div>
+  </section>
+
+  <!-- ===== MEDIA GALLERY ===== -->
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-section-header" data-reveal>
+        <span class="section-label">03 / Gallery</span>
+        <h2 class="section-title">Photos &amp; Video</h2>
+      </div>
+      <div class="gallery-grid" data-reveal>
+
+        <!-- Image placeholders (replace with real images + data-src when available) -->
+        <div class="gallery-placeholder">
+          <i class="fa-solid fa-image"></i>
+          <span class="ph-label">Finished ceiling — lights on</span>
+        </div>
+        <div class="gallery-placeholder">
+          <i class="fa-solid fa-image"></i>
+          <span class="ph-label">Full room view — effect running</span>
+        </div>
+        <div class="gallery-placeholder">
+          <i class="fa-solid fa-image"></i>
+          <span class="ph-label">Fuse block and power wiring</span>
+        </div>
+        <div class="gallery-placeholder">
+          <i class="fa-solid fa-image"></i>
+          <span class="ph-label">Level shifter wiring detail</span>
+        </div>
+        <div class="gallery-placeholder">
+          <i class="fa-solid fa-image"></i>
+          <span class="ph-label">Ceiling installation in progress</span>
+        </div>
+        <div class="gallery-placeholder">
+          <i class="fa-solid fa-image"></i>
+          <span class="ph-label">Before photo — bare T-bar ceiling</span>
+        </div>
+
+        <!-- Video embed placeholder -->
+        <div class="gallery-video-placeholder">
+          <i class="fa-solid fa-circle-play"></i>
+          <span class="ph-label">Demo video — lighting effects</span>
+          <span class="ph-sub">
+            Replace with a &lt;video&gt; tag or YouTube embed.<br>
+            e.g. &lt;video src="../assets/led-demo.mp4" controls&gt;&lt;/video&gt;
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS & TECHNOLOGIES ===== -->
+  <section class="proj-section proj-section-alt">
+    <div class="container">
+      <div class="proj-section-header" data-reveal>
+        <span class="section-label">04 / Skills &amp; Technologies</span>
+        <h2 class="section-title">What This Project Demonstrates</h2>
+      </div>
+      <div class="skills-cloud" data-reveal>
+        <span class="skill-tag"><i class="fa-solid fa-microchip"></i> ESP32</span>
+        <span class="skill-tag"><i class="fa-solid fa-sliders"></i> WLED</span>
+        <span class="skill-tag"><i class="fa-solid fa-lightbulb"></i> Addressable LEDs</span>
+        <span class="skill-tag"><i class="fa-solid fa-bolt"></i> 24V DC Distribution</span>
+        <span class="skill-tag"><i class="fa-solid fa-arrow-down-short-wide"></i> Buck Conversion</span>
+        <span class="skill-tag"><i class="fa-solid fa-right-left"></i> Level Shifting</span>
+        <span class="skill-tag"><i class="fa-solid fa-wave-square"></i> Signal Integrity</span>
+        <span class="skill-tag"><i class="fa-solid fa-shield-halved"></i> Fuse Protection</span>
+        <span class="skill-tag"><i class="fa-solid fa-circle-nodes"></i> Circuit Assembly</span>
+        <span class="skill-tag"><i class="fa-solid fa-plug"></i> Low-Voltage Wiring</span>
+        <span class="skill-tag"><i class="fa-solid fa-code"></i> Embedded Systems</span>
+        <span class="skill-tag"><i class="fa-solid fa-zap"></i> Power Electronics</span>
+        <span class="skill-tag"><i class="fa-solid fa-draw-polygon"></i> Circuit Design</span>
+        <span class="skill-tag"><i class="fa-solid fa-magnifying-glass"></i> Component Selection</span>
+        <span class="skill-tag"><i class="fa-solid fa-table"></i> BOM Development</span>
+        <span class="skill-tag"><i class="fa-solid fa-people-group"></i> Project Management</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECT NAVIGATION ===== -->
+  <section class="proj-nav-footer">
+    <div class="container">
+      <div class="proj-nav-grid" data-reveal>
+        <!-- Previous project — placeholder -->
+        <span class="proj-nav-btn">
+          <i class="fa-solid fa-arrow-left"></i> Previous Project
+        </span>
+
+        <!-- Back to all projects -->
+        <div class="proj-nav-center">
+          <a href="../index.html#projects" class="proj-back-btn">
+            <i class="fa-solid fa-grid-2"></i> Back to Projects
+          </a>
+        </div>
+
+        <!-- Next project — placeholder -->
+        <span class="proj-nav-btn right">
+          Next Project <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Justin Golden &nbsp;·&nbsp; Georgia Tech EE</p>
+      <nav class="footer-nav">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#goals">Goals</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#resume">Resume</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    </div>
+  </div>
+
+  <script src="../js/project.js"></script>
+</body>
+</html>

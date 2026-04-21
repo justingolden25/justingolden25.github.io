@@ -20,31 +20,52 @@ There are no linters, test suites, or npm scripts.
 
 ## Architecture
 
-Single-page site with three source files:
+### Main site (`index.html` + `css/styles.css` + `js/main.js`)
 
-- **`index.html`** — All content and structure. Six sections: Hero (`#home`), About (`#about`), Career Goals (`#goals`), Projects (`#projects`), Resume (`#resume`), Contact (`#contact`). Smooth-scroll SPA behavior via anchor links.
-- **`css/styles.css`** — Design system built on CSS custom properties. Georgia Tech color palette (`--gt-navy: #003057`, `--gt-gold: #B3A369`, `--gt-gold-dark`). Responsive breakpoints at 900px, 768px, and 480px.
-- **`js/main.js`** — Vanilla JS for: navbar scroll state, mobile hamburger menu, smooth scroll, active nav link tracking via `IntersectionObserver`, scroll-reveal animations, and project category filtering.
-- **`assets/`** — Real photos (headshots, project images) and SVG placeholder graphics.
+`index.html` is a single-page site with six anchor sections: Hero (`#home`), About (`#about`), Career Goals (`#goals`), Projects (`#projects`), Resume (`#resume`), Contact (`#contact`).
 
-External dependencies (CDN only, no local install):
-- Google Fonts: Playfair Display, Inter, JetBrains Mono
-- Font Awesome 6.5.0
+`css/styles.css` is the full design system built on CSS custom properties:
+- Georgia Tech palette: `--gt-navy: #003057`, `--gt-gold: #B3A369`, `--gt-gold-dark`
+- Responsive breakpoints: 900px (tablet), 768px (mobile hamburger), 480px (single-column)
+- All scroll-reveal state lives on `.visible` (not `.revealed`)
+
+`js/main.js` handles: navbar scroll state, mobile hamburger, smooth scroll, active nav link via `IntersectionObserver` on `section[id]`, scroll-reveal animations, and project category filtering.
+
+### Project subpages (`pages/*.html` + `css/project.css` + `js/project.js`)
+
+Each project gets its own page under `pages/`. Current pages: `pages/led-ceiling.html`.
+
+`css/project.css` adds all subpage-specific styles on top of `styles.css` (both are linked). Key layout classes:
+- `.proj-hero` — dark navy gradient hero with `.proj-meta-badges`
+- `.tech-sub` — two-column grid (content + image placeholder). Add `.reverse` to flip order via `direction: rtl` — this visually swaps columns without changing HTML source order. Sections must strictly alternate: A (no reverse), B (`.reverse`), C (no reverse), D (`.reverse`), etc.
+- `.tech-sub.full-width` — single-column, used for BOM/wide content
+- `.gallery-grid` — 3-col responsive grid; `.gallery-item[data-src]` items trigger the lightbox
+- `.img-placeholder` / `.bom-placeholder` — styled dashed-border placeholders for missing media
+
+`js/project.js` handles: navbar scroll state, mobile hamburger, scroll-reveal, and lightbox. The lightbox reads `data-src` and `data-alt` from `.gallery-item` elements — placeholder divs without `data-src` don't trigger it.
+
+### Linking between pages
+
+Subpages live one level deep (`pages/`), so all asset paths use `../` prefixes:
+- Stylesheets: `../css/styles.css` and `../css/project.css`
+- Scripts: `../js/project.js`
+- Nav links: `../index.html#section`
+- Assets: `../assets/filename`
+
+The main site's project card "Details" links point to `pages/led-ceiling.html` (no `../` needed from root).
 
 ## Key Patterns
 
-**Project filtering** — Project cards have a `data-category` attribute (`work`, `personal`, `research`, `coursework`). Filter buttons use `data-filter` and toggle `.hidden` on non-matching cards. The `coursework` filter button exists in the HTML with the `hidden` attribute and is not currently displayed. To add it back, remove the `hidden` attribute from the button. Category badge CSS classes: `cat-work` (green), `cat-personal` (blue), `cat-research` (gold/brown), `cat-coursework` (navy).
+**Project filtering** — Cards in `#projectsGrid` have `data-category` (`work`, `personal`, `research`, `coursework`). Filter buttons use `data-filter` and toggle `.hidden`. The `coursework` button has the `hidden` attribute and is not currently shown — remove it to display.
 
-**Scroll-reveal animations** — Elements with `[data-reveal]` are observed by `IntersectionObserver`; when visible, `.visible` is added (not `.revealed`), triggering CSS transitions. Stagger delay is set inline via `transitionDelay` in JS (every 4th element resets the cycle at `i % 4 * 80ms`). Once revealed, elements are unobserved.
+**Scroll-reveal** — Add `data-reveal` to any element. JS sets inline `transitionDelay` (`i % 4 * 80ms`) and adds `.visible` on intersection. Works identically in both `main.js` and `project.js`.
 
-**Active nav tracking** — Sections with `id` are observed; the nav link whose `data-section` matches the intersecting section's `id` gets `.active`. The observer uses `--nav-h` CSS custom property for rootMargin offset (falls back to 68px).
+**Active nav tracking** — Only applies on `index.html` (main.js). Matches `nav-link[data-section]` against `section[id]`. Subpages have no active-link tracking since they're not single-page.
 
-**Hero photo** — `.hero-img-frame` is a fixed square (340px desktop, 220px mobile) with `object-fit: cover` and `object-position: top center` on `.hero-portrait` to ensure circular crop anchored to the top of the image.
+**Hero photo** — `.hero-img-frame` is a fixed square (340px / 220px mobile) with `object-fit: cover; object-position: top center` for a circle-cropped headshot anchored to the top.
 
-**About photo** — `.about-photo` uses `width: 100%` with no fixed height, so it naturally preserves the source image's aspect ratio. Currently displays a landscape photo (`jgpiano.png`).
+**About photo** — `.about-photo` has `width: 100%` and no fixed height, preserving the source aspect ratio naturally.
 
-**About quick-stats** — Four `.stat-card` elements in `.quick-stats` show University, Major, Class Year, and Interests. The Interests card uses a single `.stat-value` `<p>` with all items separated by `·`.
+**Resume preview** — Inline HTML resume uses `.rdoc-*` classes. `.rdoc-entry-header` and `.rdoc-entry-sub` are flex rows that collapse to column on mobile. Download button links to `assets/resume.pdf`.
 
-**Resume preview** — The inline HTML resume uses `.rdoc-*` CSS classes. Section titles: `.rdoc-section-title` (gold, uppercase, bordered). Each entry uses `.rdoc-entry-header` (bold name + location) and `.rdoc-entry-sub` (italic role + date range) in a flex row. Skills use `.rdoc-skills-grid` with `.rdoc-skill-group` children. The download button links to `assets/resume.pdf`.
-
-**Section labels** — Visible sections are numbered 01–05 in their `<span class="section-label">` (About through Contact); the Hero section has no label.
+**Replacing gallery placeholders with real images** — Swap `.gallery-placeholder` div for `.gallery-item` div with `data-src="../assets/photo.jpg"` `data-alt="..."`, and put an `<img class="gallery-img">` inside. The lightbox activates automatically.
