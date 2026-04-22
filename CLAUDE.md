@@ -76,4 +76,24 @@ The main site's project card "Details" links point to `pages/led-ceiling.html` (
 
 **Vertically stretching a tech-sub image to match text height** — Add class `tech-sub-img-vstretch` to the `<img>`. This sets `align-self: stretch; height: 100%; object-fit: fill`, making the image grow to the grid row height (driven by the text column) and fill it without maintaining aspect ratio.
 
-**Cropping a tech-sub image edge** — Use an inline `style="clip-path: inset(0 0 0 X%)"` on the `<img>` to trim a percentage off the left (or adjust the four values for top/right/bottom/left). Non-destructive — the original file is unchanged.
+**Cropping a tech-sub image edge** — Use an inline `style="clip-path: inset(0 0 0 X%)"` on the `<img>` to trim a percentage off the left (or adjust the four values for top/right/bottom/left). Non-destructive — the original file is unchanged. Include `round 12px` inside the `clip-path` value to preserve border-radius when cropping (e.g. `clip-path: inset(0 0 22% 0 round 12px)`).
+
+**Embedding a YouTube video in the gallery** — Replace `.gallery-video-placeholder` with `<div class="gallery-video-embed"><iframe src="https://www.youtube.com/embed/[ID]" ...></iframe></div>`. The `.gallery-video-embed` wrapper spans all 3 gallery columns, uses `aspect-ratio: 16/9`, and positions the iframe absolutely to fill it. At 900px it spans 2 columns; at 480px it spans 1.
+
+**Embedding a Google Sheets BOM** — Replace `.bom-placeholder` with `<div class="bom-embed"><iframe src="https://docs.google.com/spreadsheets/d/e/[ID]/pubhtml?gid=[SHEET_ID]&single=true&widget=true&headers=false"></iframe></div>`. The iframe is 480px tall, full width, no border.
+
+**Hero image (replacing placeholder)** — Swap `.proj-hero-img-placeholder` for `<img class="proj-hero-img" src="../assets/..." alt="..." data-reveal />`. The `.proj-hero-img` class sets `width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-lg)`.
+
+**`.proj-meta-badges`** — Flexbox pill-shaped badges in the hero. Each badge is `<span class="proj-meta-badge"><i class="fa-..."></i> Label</span>`. Pills have a semi-transparent white background, thin border, and gold icon color. No hover state.
+
+**`.back-bar`** — Sticky bar below the navbar (`top: var(--nav-h)`, `z-index: 900`) present on all subpages. Contains a `.back-btn` link back to `../index.html#projects`.
+
+**Subpage navbar links** — Unlike `index.html`, subpage nav links are plain `<a href="../index.html#section">` anchors (no `data-section` attribute). There is no active-link tracking on subpages.
+
+**`direction: rtl` breakpoint** — `.tech-sub.reverse` uses `direction: rtl` to swap columns. At the 900px breakpoint this is reset to `ltr` because the layout collapses to single-column. Children inside `.tech-sub` always have `direction: ltr` set explicitly to prevent text mirroring.
+
+**Responsive breakpoints (project pages)** — 900px: tech-sub → single column, gallery → 2 cols; 768px: hero/section padding reduced, placeholder heights shrink; 480px: gallery → 1 col.
+
+**Lightbox close triggers** — Click `.lightbox-close` button, click the dark overlay background (checks `e.target === lightbox`), or press Escape. On open, `document.body.style.overflow = 'hidden'` locks scroll; restored on close. Image `src` is cleared on close. No next/prev navigation — Escape only.
+
+**Gallery item hover** — `.gallery-item:hover .gallery-img` scales to `1.04` over 400ms ease. No other interactive state on gallery items.

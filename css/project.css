@@ -123,6 +123,12 @@
   font-size: 2.5rem;
   color: rgba(179,163,105,.5);
 }
+.proj-hero-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
 
 /* ── Section Shared ─────────────────────────────────────────── */
 .proj-section {
@@ -255,7 +261,7 @@
   max-height: 420px;
   max-width: none;
   transform: rotate(90deg);
-  border-radius: 0;
+  border-radius: 12px;
 }
 .img-placeholder {
   width: 100%;
@@ -323,6 +329,18 @@
 }
 .bom-placeholder .ph-sub {
   font-size: .82rem;
+}
+
+.bom-embed {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.bom-embed iframe {
+  width: 100%;
+  height: 480px;
+  border: 0;
+  display: block;
 }
 
 /* Full-width subsection (for BOM) */
@@ -430,6 +448,21 @@
 }
 .gallery-video-placeholder .ph-sub {
   font-size: .78rem;
+}
+.gallery-video-embed {
+  grid-column: span 3;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.gallery-video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* ── Lightbox ───────────────────────────────────────────────── */
